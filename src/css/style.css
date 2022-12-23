@@ -1,0 +1,889 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  background-color: #3e3b3b;
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  min-height: 100%;
+  max-width: 430px;
+  background-color: black;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+}
+
+.header {
+  height: 85px;
+  padding: 15px 0 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__operations-link {
+  cursor: pointer;
+}
+
+.header__operation-link-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.header__title {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.burger {
+  height: 24px;
+  width: 34px;
+  background-color: rgba(0, 0, 0, 0);
+  /*  &:hover{
+        span{
+            background-color: $text-color;
+            &::after, &::before{
+                background-color: $text-color;
+            }
+        }
+    } */
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #CA6D17;
+  position: relative;
+}
+
+.burger span::after, .burger span::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 2px;
+  background-color: #CA6D17;
+  left: 0;
+}
+
+.burger span::after {
+  top: -9px;
+  width: 33px;
+}
+
+.burger span::before {
+  width: 13px;
+  top: 9px;
+}
+
+.wallet-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.wallet-selection__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 7px;
+}
+
+.wallet-selection__icon {
+  width: 15px;
+  height: 15px;
+}
+
+.wallet-selection__select {
+  display: block;
+  margin: 0 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+.wallet-selection__select-arrow {
+  display: block;
+  border: 10px solid transparent;
+  border-top: 10px solid white;
+  margin-top: 6px;
+}
+
+.operation-types-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #CA6D17;
+  padding-top: 35px;
+  padding-bottom: 10px;
+}
+
+.operation-types-list__item {
+  cursor: pointer;
+}
+
+.operation-types-list__item:hover {
+  color: #CA6D17;
+}
+
+.operation-types-list__item--active {
+  color: #CA6D17;
+}
+
+.transaction-amount {
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.transaction-amount__container {
+  border: 1px solid #CA6D17;
+  border-radius: 20px;
+  padding: 20px 0;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.transaction-amount__period {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+  padding-bottom: 7px;
+}
+
+.transaction-amount__period div {
+  margin: 0 auto;
+}
+
+.transaction-amount__period div span {
+  display: block;
+  width: 70%;
+  height: 1px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 7px;
+}
+
+.transaction-amount__pie-chart {
+  position: relative;
+  margin-top: 60px;
+}
+
+.transaction-amount__pie-chart svg {
+  margin-left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.transaction-amount__summ {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px dashed #CA6D17;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.transaction-amount__add-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.periods-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 10%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.periods-list__item {
+  cursor: pointer;
+}
+
+.periods-list__item:hover {
+  color: #CA6D17;
+}
+
+.periods-list__item--active {
+  color: #CA6D17;
+}
+
+.add-button {
+  background-color: rgba(0, 0, 0, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 8px solid #CA6D17;
+}
+
+.add-button span {
+  position: relative;
+  display: block;
+}
+
+.add-button span::before {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 2px;
+  background-color: #CA6D17;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.add-button span::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 17px;
+  background-color: #CA6D17;
+}
+
+.list {
+  padding-bottom: 100px;
+  padding-top: 30px;
+}
+
+.list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #CA6D17;
+  border-radius: 7px;
+  margin-bottom: 25px;
+  padding: 7px 20px;
+}
+
+.list__item-left, .list__item-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.list__item-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.list__item-percent {
+  margin-right: 20px;
+}
+
+.base-currency {
+  margin-left: 7px;
+}
+
+.category-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.category-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px 20px;
+}
+
+.category-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+}
+
+.category-list__item-icon {
+  margin-bottom: 10px;
+  width: 65px;
+  height: 65px;
+}
+
+.date-picker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.date-picker__date-btn, .date-picker__calendar-btn {
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 20px;
+}
+
+.date-picker__calendar-btn-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.date-picker__calendar-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.date-picker__date-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70px;
+  height: 40px;
+  border: 1px solid #CA6D17;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.date-picker__date-btn:hover {
+  color: #CA6D17;
+}
+
+.date-picker__date-btn-active {
+  background-color: #CA6D17;
+  color: #000000;
+}
+
+.date-picker__date-btn-active:hover {
+  color: white;
+}
+
+.operation-summ-form {
+  padding: 120px 0 200px 0;
+}
+
+.operation-summ-form__summ-input {
+  margin-bottom: 44px;
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.form {
+  padding: 30px 0 200px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.input {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  width: 180px;
+  height: 30px;
+  border-bottom: 1px solid #CA6D17;
+  font-size: 20px;
+  text-align: center;
+}
+
+.submit-btn {
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 24px;
+  border: 1px solid #CA6D17;
+  padding: 4px 60px;
+  border-radius: 7px;
+}
+
+.add-wallet-form__summ-input {
+  margin-bottom: 44px;
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.add-wallet-form__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.add-wallet-form__name-label {
+  margin-bottom: 7px;
+}
+
+.add-wallet-form__name-input {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: start;
+}
+
+.add-wallet-form__currency {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.add-wallet-form__currency-label {
+  margin-bottom: 7px;
+}
+
+.icon-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 20px;
+}
+
+.icon-list__item {
+  margin: 10px;
+}
+
+.icon-list__icon {
+  width: 65px;
+  height: 65px;
+}
+
+.currency-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.currency-selection__currency {
+  color: #CA6D17;
+}
+
+.currency-selection span {
+  display: block;
+  border: 10px solid transparent;
+  border-top: 10px solid white;
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.add-category-form__name-input {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: start;
+}
+
+.add-category-form__icon-selection {
+  margin-bottom: 30px;
+}
+
+.overall-balance {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.overall-balance__summ {
+  margin-top: 7px;
+}
+
+.transfer-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.transfer-btn__icon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: block;
+  border: 1px solid #CA6D17;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 7px;
+}
+
+.transfer-btn__text {
+  font-size: 13px;
+}
+
+.transfer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px;
+}
+
+.walletw-list {
+  padding-bottom: 50px;
+}
+
+.wallet-add-btn {
+  margin: 0 auto;
+}
+
+.transaction-form {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.transaction-form__label {
+  margin-bottom: 15px;
+}
+
+.transaction-form__wallet-selection {
+  margin-bottom: 40px;
+}
+
+.transaction-form__summ-input {
+  margin-bottom: 40px;
+  width: 150px;
+}
+
+.transaction-form__date {
+  color: #CA6D17;
+  margin-bottom: 40px;
+}
+
+.transaction-form__comment-input {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 70px;
+}
+
+.transaction-form__submit-btn {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(43, 51, 51, 0.95);
+  width: 100%;
+  height: 100%;
+}
+
+.choice-wallet {
+  padding: 60px 90px 10px 90px;
+}
+
+.choice-wallet__title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.choice-wallet__wallet-icon {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 15px;
+}
+
+.choice-wallet__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.choice-wallet__list-item:not(last-child) {
+  margin-bottom: 30px;
+}
+
+.choice-wallet__wallet-name {
+  margin-bottom: 10px;
+}
+
+.choice-wallet__radio-btn {
+  margin-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.choice-wallet__radio-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+}
+
+.choice-wallet__radio-label {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.choice-wallet__radio-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #CA6D17;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.choice-wallet__radio-label::after {
+  content: '';
+  display: none;
+  width: 10px;
+  height: 10px;
+  background-color: #CA6D17;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.choice-wallet__radio-input:checked + .choice-wallet__radio-label::after {
+  display: block;
+}
+
+.choice-wallet__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 150px;
+}
+
+.choice-wallet__btn {
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.choice-wallet__btn:hover {
+  color: #CA6D17;
+}
+
+.hidden {
+  display: none;
+}

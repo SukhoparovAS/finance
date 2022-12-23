@@ -1,0 +1,791 @@
+@import "stylenull.scss";
+
+$text-color: white;
+$font-size: 20px;
+$theme-color: #CA6D17;
+
+body{
+    
+    background-color: rgb(62, 59, 59);
+    color: $text-color;
+    font-size: $font-size;
+    font-family: sans-serif;
+}
+
+.wrapper{
+    min-height: 100%;
+    max-width: 430px;
+    background-color: rgb(0, 0, 0);
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+}
+
+.header{
+    height: 85px;
+    padding: 15px 0 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__operations-link{
+        cursor: pointer;
+    }
+    &__operation-link-icon{
+        width: 35px;
+        height: 35px;
+      }
+     
+      &__title{
+        letter-spacing: 1px;
+        text-align: center;
+        line-height: $font-size+5px;
+        margin-top: 60px;
+      }
+}
+
+.burger{
+    height: 24px;
+    width: 34px;
+    background-color: rgba($color: #000000, $alpha: 0.0);
+   /*  &:hover{
+        span{
+            background-color: $text-color;
+            &::after, &::before{
+                background-color: $text-color;
+            }
+        }
+    } */
+    span{
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: $theme-color;
+        position: relative;
+        
+        &::after, &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            height: 2px;
+            background-color: $theme-color;
+            left: 0;
+        }
+        &::after{
+            top: -9px;
+            width: 33px;
+        }
+        &::before{
+            width: 13px;
+            top: 9px;
+    }
+    }
+    
+}
+
+.wallet-selection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    &__container{
+        display: flex;
+        margin-bottom: 7px;
+    }
+    &__icon{
+        width: 20px;
+        height: 20px;
+    }
+    &__wallet-name{
+        max-width: 150px;
+        display: block;
+        margin: 0 7px;
+        background-color: transparent;
+        color: $text-color;
+        font-size: $font-size;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__select-arrow{
+        display: block;          
+        border: $font-size/2 solid transparent; border-top: $font-size/2 solid $text-color;
+        margin-top: 6px;
+    }
+}
+
+.operation-types-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $theme-color;
+    padding-top: 35px;
+    padding-bottom: 10px;
+    &__item{
+        cursor: pointer;
+        &:hover{
+            color: $theme-color;
+        }
+    }
+    &__item--active{
+        color: $theme-color;
+    }
+}
+
+.transaction-amount{
+    padding-bottom: 20px;
+    padding-top: 30px;
+    
+    &__container{
+        border: 1px solid $theme-color;
+        border-radius: 20px;
+        padding: 20px 0 ;
+        padding-bottom: 60px;
+        position: relative;
+    }
+    &__period{
+        display: flex;
+        margin-top: 25px;
+        padding-bottom: 7px;
+        cursor: pointer;
+        &:hover{
+            color: $theme-color;
+        }
+        div{
+            margin: 0 auto;
+            span{
+                display: block;
+                width: 70%;
+                height: 1px;
+                background-color: $text-color;
+                margin: 0 auto;
+                margin-top: 7px;
+            }
+        }
+    }
+    &__pie-chart{
+        position: relative;
+        margin-top: 60px;
+        svg{
+            display: block;
+            margin-left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+    &__summ{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px dashed $theme-color;
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        transform: translate(-50%, -50%);
+    }
+
+    &__add-button{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+.periods-list{
+    display: flex;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: space-between;
+    &__item{
+        cursor: pointer;
+        &:hover{
+            color: $theme-color;
+        }
+        &--active{
+            color: $theme-color;
+        }
+    }
+}
+
+.add-button{
+    background-color: rgba($color: #000000, $alpha: 0.0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 8px solid $theme-color;
+    span{
+        position: relative;
+        display: block;
+        &::before{
+            content: '';
+            display: block;
+            width: 17px;
+            height: 2px;
+            background-color: $theme-color;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &::after{
+            content: '';
+            display: block;
+            width: 2px;
+            height: 17px;
+            background-color: $theme-color;
+        }
+    }
+}
+
+.list{
+    padding-bottom: 100px;
+    padding-top: 30px;
+    font-size: 16px;
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $theme-color;
+        border-radius: 7px;
+        margin-bottom: 25px;
+        padding: 7px 20px;
+    }
+    &__item-left, &__item-right{
+        display: flex;
+        align-items: center;
+    }
+    &__item-icon{
+        width: $font-size;
+        height: $font-size;
+        margin-right: 10px;
+    }
+    &__item-percent{
+        margin-right: 20px;
+    }
+    &__item-name{
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.base-currency{
+    margin-left: 7px;
+}
+
+/* .category-selection{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+} */
+
+
+
+.date-picker{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    &__date-btn, &__calendar-btn{
+        display: block;
+        background-color: rgba($color: #000000, $alpha: 0.0);
+        color: $text-color;
+        font-size: $font-size;
+    }
+    &__calendar-btn-icon{
+        width: 35px;
+        height: 35px;
+    }
+    &__calendar-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__date-btn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 40px;
+        border: 1px solid $theme-color;
+        border-radius: 7px;
+        font-size: 14px;
+        &:hover{
+            color: $theme-color;
+        }
+        &--active{
+            background-color: $theme-color;
+            color: #000000;
+            &:hover{
+                color: $text-color;
+            }
+        }
+    }
+
+}
+
+/* .operation-summ-form{
+    padding: 120px 0 200px 0;
+    &__summ-input{
+        margin-bottom: 44px;
+        margin-right: 10px;
+        margin-left: 40px;
+    }
+} */
+
+
+
+
+
+
+.submit-btn{
+    display: block;
+    background-color: rgba($color: #000000, $alpha: 0.0);
+    color: $text-color;
+    font-size: $font-size*1.2;
+    border: 1px solid $theme-color;
+    padding: 4px 60px;
+    border-radius: 7px;
+}
+
+
+
+.icon-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    &__item{
+        margin: 10px;
+    }
+    &__icon{
+        width: 65px;
+        height: 65px;
+    }
+}
+
+.currency-selection{
+    display: flex;
+    cursor: pointer;
+    &__currency{
+        color: $theme-color;
+    }
+    span{
+        display: block;          
+        border: $font-size/2 solid transparent; border-top: $font-size/2 solid $text-color;
+        margin-top: 6px;
+        margin-left: 5px;
+    }
+}
+
+.add-category-form{
+    &__name-input{
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: start;
+    }
+    &__icon-selection{
+        margin-bottom: 30px;
+    }
+}
+
+.overall-balance{
+    text-align: center;
+    padding-top: 30px;
+    &__summ{
+        margin-top: 7px;
+    }
+}
+
+.transfer-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__icon{
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: block;
+        border: 1px solid $theme-color;
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom: 7px;
+    }
+    &__text{
+        font-size: 13px;
+    }
+}
+
+.transfer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.walletw-list{
+    padding-bottom: 50px;
+}
+
+.wallet-add-btn{
+    margin: 0 auto;
+}
+
+.transaction-form{
+    align-items: flex-start;
+    &__label{
+        margin-bottom: 15px;
+    }
+    &__wallet-selection{
+        margin-bottom: 40px;
+    }
+    &__summ-input{
+        margin-bottom: 40px;    
+        width: 150px;
+    }
+    &__date{
+        color: $theme-color;
+        margin-bottom: 40px;
+    }
+    &__comment-input{
+        width: 100%;
+        text-align: left;
+        margin-bottom: 70px;
+    }
+    &__submit-btn{
+        align-self: center;
+    }
+}
+
+.popup{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba($color: #2b3333, $alpha: 0.98);
+    width: 100%;
+    height: 100%;
+}
+
+.choice-wallet{
+    padding: 60px 60px 10px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__wallet-list{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 100px;
+    }
+    &__title{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__wallet-icon{
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-right: 15px;
+        padding: 6px;
+        border: 2px solid $theme-color;
+        border-radius: 50%;
+    }
+
+    &__list-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__list-item--center{
+        align-self: center;
+    }
+    &__list-item:not(last-child){
+        margin-bottom: 30px;
+    }
+    &__wallet-name{
+        margin-bottom: 10px;
+        color: $theme-color;
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__radio-btn{
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__radio-input{
+        appearance: none;
+        position:absolute;
+    }
+    &__radio-label{
+        width: 20px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+        &::before{
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: rgba($color: #000000, $alpha: 0.0);
+            border: 2px solid $theme-color;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        &::after{
+            content: '';
+            display: none;
+            width: 10px;
+            height: 10px;
+            background-color: $theme-color;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    &__radio-input:checked + &__radio-label::after{
+        display: block;
+    }
+}
+.select-btns{
+    display: flex;
+        justify-content: space-between;
+        width: 100%;
+    &__btn{
+        font-size: $font-size;
+        background-color: rgba($color: #000000, $alpha: 0.0);
+        color: $text-color;
+        &:hover{
+            color: $theme-color;
+        }
+    }
+}
+.hidden{
+    display: none;
+}
+
+
+.input{
+    color: $text-color;
+    background-color: rgba($color: #000000, $alpha: 0.0);
+    height: 30px;
+    border-bottom: 1px solid $theme-color;
+    font-size: $font-size;
+    text-align: center;
+    &--danger{
+        border-bottom: 1px solid red;
+    }
+}
+
+
+
+
+.category-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    $item-size: 55px;
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 10px;
+        cursor: pointer;
+        &:hover{
+            color: $theme-color;
+        }
+        &--active{
+            border: 3px solid white;
+        }
+    }
+    &__item-icon{
+        width: $item-size - 22px;
+        height: $item-size - 22px;
+        object-fit: cover;
+    }
+    &__item-name{
+        max-width: $item-size;
+        text-align: center;
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__img-container{
+        width: $item-size;
+        height: $item-size;
+        border-radius: 50%;
+        background-color: #999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        
+    }
+}
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////
+/// 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.form{
+    padding: 30px 0 200px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.auth{
+    padding: 30px;
+    padding-top: 50px;
+    &__input{
+        margin-bottom: 30px;
+    }
+    &__title {
+        margin-bottom: 30px;
+      }
+    &__submit-btn{
+        margin-bottom: 30px;
+        color: white;
+    }
+    &__link{
+        color: white;
+    }
+}
+
+.submit-btn{
+    display: block;
+    background-color: rgba($color: #000000, $alpha: 0.0);
+    color: $text-color;
+    font-size: $font-size*1.2;
+    border: 1px solid $theme-color;
+    padding: 4px 60px;
+    border-radius: 7px;
+    &:hover{
+        background-color: $theme-color;
+    }
+}
+
+.error-message {
+    font-size: 12px;
+    color: red;
+    margin-bottom: 5px;
+  }
+
+  .custom-input{
+    width: 100%;
+    height: 50px;
+    &__input-wrapper{
+        display: flex;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    &__input{
+        height: 30px;
+        width: 100%;
+        color: $text-color;
+        background-color: rgba($color: #000000, $alpha: 0.0);
+        border-bottom: 1px solid $theme-color;
+        font-size: $font-size;
+        text-align: left;
+        &--danger{
+            border-bottom: 1px solid red;
+        }
+    }
+  }
+
+  .calendar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 100px;
+  }
+
+  .datepicker-here{
+    margin-bottom: 100px;
+  }
+
+  .add-operation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__submit-btn{
+        margin-bottom: 40px;
+        margin-top: 50px;
+    }
+    &__date-picker{
+        margin-top: 50px;
+    }
+    &__iput{
+        width: 240px;
+        margin-bottom: 30px;
+        margin-top: 40px;  
+        input{
+            text-align: center;
+        }   
+    }
+}
+
+.add-wallet{
+    padding-top: 60px;
+    &__input{
+        margin-bottom: 40px;
+        input{
+            text-align: center;
+        }
+    }
+    &__name{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__name-label{
+        margin-bottom: 7px;
+    }
+    &__name-input{
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: start;
+    }
+    &__currency{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    &__currency-label{
+        margin-bottom: 7px;
+    }
+    &__icon-select{
+        margin-bottom: 30px;
+    }
+}
